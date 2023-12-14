@@ -5,7 +5,7 @@ import useFetch from "./useFetch"
 const useProductos = (parametro,id) => {
 
     //Hay dos parametros
-    //1- Categorias (del itemListContainer) que a su vez puede ser el parametro ID:
+    //1- Categorias (del itemListContainer) que a su vez puede tener el parametro ID:
     //                      a) Vacio, porque son todos los productos
     //                      b) Con categoria, porque elegi una categoria
     //2- El "IdProducto". Que trae como variable "ID" es campo ID del producto (cuando voy a ver un producto en si)
