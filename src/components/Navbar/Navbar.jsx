@@ -2,21 +2,21 @@ import CartWidget from "../CartWidget/CartWidget";
 import carrito from "/carrito.png";
 import carrito_2 from "/carrito_2.png";
 import logo from "/SM_logo.png"; //"../../../public/SM_logo.png"
-import logo2 from "/SM_logo_2.png"; 
+import logo2 from "/SM_logo_2.png";
 
-import NavLink from './NavLink'
+import NavLink from "./NavLink";
+
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <header className="bg-zinc-400 hover:bg-red-900">
-      
-        <div className="container m-auto py-6 flex justify-between items-center">
+      <div className="container m-auto py-6 flex justify-between items-center">
         <img className="w-20 h-20" src={logo} alt="logo" />
+        <div className="text-white hover:text-red-200 text-lg font-semibold">
           <nav className="flex gap-4 ">
-            <NavLink href={"#"} text={"Enlace 1"}/>
-            <NavLink href={"#"} text={"Enlace 2"}/>
-            <NavLink href={"#"} text={"Enlace 3"}/>
-            <NavLink href={"#"} text={"Enlace 4"}/>
+            <Link to={"/"}>Inicio</Link>
+            <Link to={"/Productos"}>Productos</Link>
             <ul>
               <li className="nav__list">
                 <a href="carrito">
@@ -24,8 +24,8 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-          </nav>
-        
+          </nav>{" "}
+        </div>
       </div>
     </header>
   );
