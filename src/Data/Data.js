@@ -58,6 +58,16 @@ export const MOCK_DATA = [
         description: 'Chomba blanca River Plate',
         img:'https://tiendariver.vteximg.com.br/arquivos/ids/169938-500-500/HH8576_F_Torso_B2CCat.jpg',
         price:'60000.00'
-    }
+    },
+    {
+        id:7,
+        category:'Electronica',
+        subcategory: 'Computacion',
+        prodtype: 'Notebook',
+        name:'Lenovo IdeaPad 1 15ALC7',
+        description: 'Procesador Ryzen 7 - 16GB - SSD 512',
+        img: 'https://http2.mlstatic.com/D_NQ_NP_2X_899047-MLU72315252682_102023-F.webp',
+        price:1000.00        
+    },
     
 ]

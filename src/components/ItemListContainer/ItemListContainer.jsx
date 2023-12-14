@@ -1,10 +1,13 @@
 import ItemList from "../ItemList/ItemList";
 import useProductos from "../../hooks/useProductos";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
-  const { productos, loading } = useProductos()
+  const {categoria} = useParams()
+  //console.log(categoria)
+  const { productos, loading } = useProductos('Categoria',categoria)
 
-  return (
+  return ( 
         <div
            className="container mx-auto">
           {loading ? (
