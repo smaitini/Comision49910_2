@@ -10,13 +10,16 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header className="bg-zinc-400 hover:bg-red-900">
+    <header className="bg-red-900">
       <div className="container m-auto py-6 flex justify-between items-center">
         <img className="w-20 h-20" src={logo} alt="logo" />
-        <div className="text-white hover:text-red-200 text-lg font-semibold">
+        <div className="text-white text-lg font-semibold">
           <nav className="flex gap-4 ">
-            <Link to={"/"}>Inicio</Link>
-            <Link to={"/Productos"}>Productos</Link>
+            <Link className="hover:text-red-200" to={"/"}>Inicio</Link>
+            <Link className="hover:text-red-200" to={"/Productos"}>Productos</Link>
+            <Link className="hover:text-red-200" to={"/Productos/electronica"}>Electonica</Link>
+            <Link className="hover:text-red-200" to={"/Productos/deportes"}>Deportes</Link>
+            <Link className="hover:text-red-200" to={"/Productos/muebles"}>Muebles</Link>
             <ul>
               <li className="nav__list">
                 <a href="carrito">
