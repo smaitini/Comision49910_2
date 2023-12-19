@@ -1,0 +1,102 @@
+.card_mia {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.card_mia_ajustes{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    gap: 5rem;
+}
+
+  .card {
+    width: 300px;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .card img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }
+
+  .card-content {
+    padding: 20px;
+    text-align: center;
+  }
+
+.card_mia_ajustes_texto{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.fondo_rojo{
+    background-color: darkred;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.texto_centrado{
+    text-align: center;
+}
+
+.letras_oscuras{
+    color:black
+}
+
+.letras_claras{
+    color:blanchedalmond
+}
+
+.fondo_crema{
+    background-color: beige;
+}
+
+.letras_precio{
+    text-decoration: underline;
+    color:red;
+}
+
+.letras_grandisimas{
+    font-size: xx-large;
+}
+
+.letras_grandes{
+    font-size: x-large;
+}
+
+.centrado{
+    align-items: center;
+}
+
+.italico {
+    font-style: italic;
+}
+
+.subrayado{
+    text-decoration: underline;
+}
+
+.margenes{
+    margin-top: 5rem;
+}
+
+.borde_radio{
+    background-color: black;
+}
+
+.margen_lado{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.texto_centrado{
+    text-align: center;
+}

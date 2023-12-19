@@ -1,8 +1,6 @@
 
-import { useState } from "react"
 import { MOCK_DATA } from "../data/Data.js"
-
-export const pedirDatos = () => {
+const pedirDatos = () => {
 
     return new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -10,3 +8,4 @@ export const pedirDatos = () => {
         }, 3000)
     })
 }
+export default pedirDatos;
