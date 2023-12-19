@@ -1,3 +1,4 @@
+import Boton from "../Boton/Boton";
 import Contador from "../Contador/Contador";
 import "./ItemDetail.css";
 
@@ -38,7 +39,8 @@ const ItemCard = ({ item }) => {
             <span className="text-4x1 text-stone-600 font-bold ">
               Stock: {item.stock}
             </span>
-            <Contador hasta={item.stock} />
+            <Contador hasta={item.stock} className="bg-red-500 rounded items-center py-2 px-4 text-stone-50 flex font-semibold my-4" />
+            <Boton className='bg-gray-100 rounded flex items-center py-2 px-4 text-center text-red-500 font-semibold my-4'>COMPRAR</Boton>
           </div>
         </div>
       </div>
