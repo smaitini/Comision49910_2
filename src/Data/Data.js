@@ -27,7 +27,7 @@ export const MOCK_DATA = [
         subcategory: 'Futbol',
         prodtype: 'Pantalones',
         name:'Pantalon River titular',
-        description: 'Pantalos titular de River Plate',
+        description: 'Pantalon titular de River Plate',
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTHcNzt74GjzAwKYAO6uc-Pl_LnuBf3N5VWg&usqp=CAU',
         price:'1000.00',
         stock:10    
@@ -49,7 +49,7 @@ export const MOCK_DATA = [
         subcategory: 'Futbol',
         prodtype: 'Camiseta',
         name:'Camiseta River alternativo',
-        description: 'Pantalon alternativo de River Plate',
+        description: 'Camiseta alternativa de River Plate',
         img:'https://tiendariver.vteximg.com.br/arquivos/ids/168732-500-500/GU9607_APP_photo_thumbnail_transparent.png?v=637780227959870000',
         price:'60000.00',
         stock:10

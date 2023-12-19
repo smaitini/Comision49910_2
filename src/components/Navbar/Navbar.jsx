@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <header className="bg-red-900">
       <div className="container m-auto py-6 flex justify-between items-center">
-        <img className="w-20 h-20" src={logo} alt="logo" />
+        <Link to={"/"}><img className="w-20 h-20" src={logo} alt="logo" /></Link>
         <div className="text-white text-lg font-semibold">
           <nav className="flex gap-4 ">
             <Link className="hover:text-red-200" to={"/"}>Inicio</Link>
