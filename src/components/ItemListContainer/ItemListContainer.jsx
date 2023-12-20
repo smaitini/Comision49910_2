@@ -28,11 +28,12 @@ const ItemListContainer = () => {
   }, [categoria]);
 
   return (
-    <div className="container mx-auto ">
+    <div className="container mx-auto content-center">
       {loading ? (
         <h2 className="text-center text-4xl mt-8 ">Cargando...</h2>
       ) : (
         <>
+          {/* <Contador/> */}
           <div>
             <ItemList productos={productos} />
           </div>
