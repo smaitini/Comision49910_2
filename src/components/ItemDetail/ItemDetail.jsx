@@ -1,26 +1,21 @@
+import { useContext, useState } from "react";
 import Boton from "../Boton/Boton";
 import Contador from "../Contador/Contador";
+import QuantityButtons from "../QuantityButtons/QuantityButtons";
 import "./ItemDetail.css";
+import { CartContext } from "../../context/CartContext";
 
 const ItemCard = ({ item }) => {
-  console.log(item);
-  return (
-    // <div className='card_mia margenes'>
-    //     <div className="card_mia_ajustes">
-    //       <img className="card_img" src={item.img} alt={item.name} />
-    //       <div className="card_mia_ajustes_texto fondo_crema">
-    //       <div className = 'fondo_rojo letras_grandisimas letras_claras texto_centrado bold subrayado'>{item.subcategory}</div>
-    //       <div className = 'fondo_rojo letras_grandisimas letras_claras texto_centrado bold'>{item.name}</div>
-    //       <div className='bold letras_grandes'>Descripcion: {item.description}</div>
+  const [cantidad, setCantidad] = useState(1)
+  const { addToCart, isInCart } = useContext(CartContext)
 
-    //       <div>{item.description}</div>
-    //       <div className='letras_precio letras_grandes italico texto_centrado bold'>$ {item.price}</div>
-    //       <div>{item.description}</div>
-    //       <div>Stock {item.stock}</div>
-    //       <Contador className='centrado'/>
-    //       </div>
-    //     </div>
-    // </div>
+  const handleAgregar = () => {
+    const itemToBuy = {...item,cantidad,}
+    addToCart(itemToBuy)
+    console.log(itemToBuy)
+  }
+  return (
+  
     <div className=" w-96 h-auto p-3 flex flex-col  items-center rounded-2xl mt-5 shadow-xl">
       <div className="flex flex-row justify-between ">
         <div className="flex flex-col items-center ">
@@ -39,8 +34,16 @@ const ItemCard = ({ item }) => {
             <span className="text-4x1 text-stone-600 font-bold ">
               Stock: {item.stock}
             </span>
-            <Contador hasta={item.stock} className="bg-red-500 rounded items-center py-2 px-4 text-stone-50 flex font-semibold my-4" />
-            <Boton className='bg-gray-100 rounded flex items-center py-2 px-4 text-center text-red-500 font-semibold my-4'>COMPRAR</Boton>
+            <QuantityButtons 
+                cantidad= {cantidad}
+                stock= {item.stock}
+                setCantidad = {setCantidad }
+                className ="bg-red-500 rounded items-center py-2 px-4 text-stone-50 flex font-semibold my-4"
+                />
+                {/*
+                Esto no va más porque necesito que me devuelva la cantidad de elementos del item. El contador solo muestra
+                <Contador hasta={item.stock} className="bg-red-500 rounded items-center py-2 px-4 text-stone-50 flex font-semibold my-4" /> */}
+            <Boton onClick= {handleAgregar} className='bg-gray-100 rounded flex items-center py-2 px-4 text-center text-red-500 font-semibold my-4'>COMPRAR</Boton>
           </div>
         </div>
       </div>
