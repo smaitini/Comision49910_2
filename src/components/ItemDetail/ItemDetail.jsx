@@ -6,6 +6,7 @@ import "./ItemDetail.css";
 import { CartContext } from "../../context/CartContext";
 
 const ItemCard = ({ item }) => {
+  let Ars = new Intl.NumberFormat('en-US', {style: 'currency',currency: 'ARS'})
   const [cantidad, setCantidad] = useState(1)
   const { addToCart, isInCart } = useContext(CartContext)
 
@@ -30,7 +31,7 @@ const ItemCard = ({ item }) => {
             <span className=" text-stone-600 font-bold text-xl">
               {item.description}
             </span>
-            <h2 className="text-xl text-stone-600 font-bold ">${item.price}</h2>
+            <h2 className="text-xl text-stone-600 font-bold ">{Ars.format(item.price)}</h2>
             <span className="text-4x1 text-stone-600 font-bold ">
               Stock: {item.stock}
             </span>

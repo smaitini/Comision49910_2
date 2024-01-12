@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import pedirDatos from "../../utils/utils";
+// import pedirDatos from "../../utils/utils";
 //import ItemCard from "../ItemCard/ItemCard";
 import ItemDetail from "../ItemDetail/ItemDetail";
+import { db } from "../../firebase/config";
+import { doc, getDoc } from "firebase/firestore";
+
 
 const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -12,13 +15,24 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    pedirDatos() // <= Promise
-      .then((data) => {
-        const itemData = data.find((prop) => prop.id === Number(itemId));
-        console.log("este es el ´roducto", itemData);
-        setItem(itemData);
-        setLoading(false);
-      });
+    const docRef = doc(db,'productos',itemId)
+    getDoc(docRef)
+      .then((docItem) => {
+        const doc = {
+          ...docItem.data(),
+          id: docItem.id          
+        }
+        setItem(doc)
+        // console.log(doc)
+      })
+      .finally(() => setLoading(false))
+    // pedirDatos() // <= Promise
+    //   .then((data) => {
+    //     const itemData = data.find((prop) => prop.id === Number(itemId));
+    //     console.log("este es el ´roducto", itemData);
+    //     setItem(itemData);
+    //     setLoading(false);
+    //   });
   }, []);
 
   return (

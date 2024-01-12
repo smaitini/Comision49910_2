@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import Contador from "../Contador/Contador";
 
 const ItemCard = ({ item }) => {
+  let Ars = new Intl.NumberFormat('en-US', {style: 'currency',currency: 'ARS'})
+
   return (
     <div className="flex flex-col my-4 items-center gap-5 mt-5 ml-5 hover:shadow-xl hover:shadow-current ">
       <div>
@@ -15,6 +17,7 @@ const ItemCard = ({ item }) => {
 
       <div className="flex flex-col bg-red-200 w-full items-center rounded-b-lg">
         <div className="text-center text-lg" >{item.name}</div>
+        <div>{Ars.format(item.price)}</div>
 
         <Contador
           hasta={item.stock}
