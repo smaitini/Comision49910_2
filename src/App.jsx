@@ -4,6 +4,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
+//import { CartContextProvider } from "./context/CartContext"
 function App() {
   return (
     <CartProvider>
@@ -20,6 +21,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </CartProvider>
+
   );
 }
 export default App

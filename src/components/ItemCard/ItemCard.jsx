@@ -8,7 +8,7 @@ import Contador from "../Contador/Contador";
 
 const ItemCard = ({ item }) => {
   let Ars = new Intl.NumberFormat('en-US', {style: 'currency',currency: 'ARS'})
-
+  
   return (
     <div className="flex flex-col my-4 items-center gap-5 mt-5 ml-5 hover:shadow-xl hover:shadow-current ">
       <div>
@@ -19,12 +19,12 @@ const ItemCard = ({ item }) => {
         <div className="text-center text-lg" >{item.name}</div>
         <div>{Ars.format(item.price)}</div>
 
-        <Contador
+        {/* <Contador
           hasta={item.stock}
           className={
             "bg-red-500 rounded items-center py-2 px-4 text-stone-50 flex font-semibold my-4"
           }
-        />
+        /> */}
          <Button size="small" color="primary">
             <Link className='text-red-500' to={`/item/${item.id}` }>Ver producto</Link>
             {/* <Link to={`/item/${item.id}`}>Ver más</Link> */}

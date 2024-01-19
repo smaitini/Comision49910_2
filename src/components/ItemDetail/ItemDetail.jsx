@@ -7,13 +7,14 @@ import { CartContext } from "../../context/CartContext";
 
 const ItemCard = ({ item }) => {
   let Ars = new Intl.NumberFormat('en-US', {style: 'currency',currency: 'ARS'})
+  const { addToCart} = useContext(CartContext)
   const [cantidad, setCantidad] = useState(1)
-  const { addToCart, isInCart } = useContext(CartContext)
+  console.log({item})
 
   const handleAgregar = () => {
     const itemToBuy = {...item,cantidad,}
     addToCart(itemToBuy)
-    console.log(itemToBuy)
+
   }
   return (
   
@@ -38,7 +39,7 @@ const ItemCard = ({ item }) => {
             <QuantityButtons 
                 cantidad= {cantidad}
                 stock= {item.stock}
-                setCantidad = {setCantidad }
+                setCantidad = {setCantidad}
                 className ="bg-red-500 rounded items-center py-2 px-4 text-stone-50 flex font-semibold my-4"
                 />
                 {/*
