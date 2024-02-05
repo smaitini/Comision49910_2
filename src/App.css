@@ -1,31 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-    margin: 0.5 rem
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+.color_fondo_header {
+  background-color: #F1E705;
 }
 
-
-.card_img {
-    width: 300px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 1;
+.color-negro {
+  color: black;
 }
 
-.App {
-    display: flex;
-  }
+.greeting {
+  text-align: center;
+  background-color: #F1E705;
+  padding: .125rem;
+}
+.prueba {
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+
+}
+
+.navbar{
+  font-family: 'Permanent Marker', cursive;
+  color: white;
+  font-size: 20px;
   
-  aside {
-    width: 20%;
-    background-color: #f0f0f0;
-    padding: 20px;
-  }
+}
+
+.card-espacio {
+  gap: 2rem;
+}
+
+.espacio-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Caards{
+  display: flex;
+  justify-content: center; /* Añadido para centrar horizontalmente */
+  flex-wrap: wrap; /* Añadido para permitir que las tarjetas se ajusten en filas */
+  align-items: flex-start; /* Opcional, ajusta según tus necesidades */
+  gap: 16px; /* Espacio entre tarjetas */
   
-  main {
-    flex: 1;
-    padding: 20px;
-  }
+}
+
+.img-carrito{
+  width: 100px;
+  height: auto;
+  border: 1px;
+}

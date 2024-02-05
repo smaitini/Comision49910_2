@@ -1,17 +1,17 @@
-//import './CartWidget.css'
+import React, { useContext } from 'react'
+import { IoCartOutline } from "react-icons/io5";
+import { CartContext } from '../../context/CartContext';
 
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+const CartWidget = () => {
+ const {getTotalQuantity} = useContext( CartContext );
 
-// eslint-disable-next-line react/prop-types
-function CartWidget({imagen,alt}) {
-    const {itemsInCart} = useContext(CartContext)
-    return (
-        <div className='flex justify-between'>
-            <img className="w-s h-8 gap-4" src={imagen} alt={alt} />
-            <p className="text-white hover:text-red-200 text-lg font-semibold gap-2">{itemsInCart}</p>
-        </div>
-    )
+ let total = getTotalQuantity();
+  return (
+    <div>
+        <button><IoCartOutline /><span>{total}</span></button>
+        
+    </div>
+  )
 }
 
-export default CartWidget;
+export default CartWidget

@@ -1,0 +1,201 @@
+[
+    {
+        "id": "1",
+        "titulo": "Bucal",
+        "imagen": "/img/a1.jpg",
+        "categoria": "accesorios",
+        "precio": 8500,
+        "stock":4,
+        "descripcion": "bucal transparente"
+        
+    },
+    {
+        "id": "2",
+        "titulo": "Canilleras",
+        "imagen": "/img/a2.jpg",
+        "categoria": "accesorios",
+        "precio": 12000,
+        "stock":10,
+        "descripcion": "Canilleras San Lorenzo RB"
+    },
+    {
+        "id": "3",
+        "titulo": "Guantes Arquero",
+        "imagen": "/img/a3.jpg",
+        "categoria": "accesorios",
+        "precio": 17500,
+        "stock":10,
+        "descripcion": "Guantes Arquero Nike negros blanco y negro"
+    },
+    {
+        "id": "4",
+        "titulo": "Inflador",
+        "imagen": "/img/a4.jpg",
+        "categoria": "accesorios",
+        "precio": 24000,
+        "stock":10,
+        "descripcion": "Inflador para pelota"
+    },
+    {
+        "id": "5",
+        "titulo": "Pelota",
+        "imagen": "/img/a5.jpg",
+        "categoria": "accesorios",
+        "precio": 29500,
+        "stock":10,
+        "descripcion": "Pelota adidas blanca y roja"
+    },
+    {
+        "id": "6",
+        "titulo": "Pelota",
+        "imagen": "/img/a6.jpg",
+        "categoria": "accesorios",
+        "precio": 7500,
+        "stock":10,
+        "descripcion": "Pelota adidas copa america"
+    },
+    {
+        "id": "7",
+        "titulo": "Pelota",
+        "imagen": "/img/a7.jpg",
+        "categoria": "accesorios",
+        "precio": 16000,
+        "stock":10,
+        "descripcion": "Pelota Sorma azul y blanca"
+    },
+    {
+        "id": "8",
+        "titulo": "Pelota",
+        "imagen": "/img/a8.jpg",
+        "categoria": "accesorios",
+        "precio": 22500,
+        "stock":10,
+        "descripcion": "Pelota independiente"
+    },
+    {
+        "id": "9",
+        "titulo": "Venda",
+        "imagen": "/img/a9.jpg",
+        "categoria": "accesorios",
+        "precio": 28000,
+        "stock":10,
+        "descripcion": "Venda blanca 5mm"
+    },
+    {
+        "id": "10",
+        "titulo": "Basquet Buzo",
+        "imagen": "/img/b1.jpg",
+        "categoria": "basquet",
+        "precio": 11000,
+        "stock":10,
+        "descripcion": "Buzo canguro con capucha "
+    },
+    {
+        "id": "11",
+        "titulo": "Basquet Musculosa",
+        "imagen": "/img/b2.jpg",
+        "categoria": "basquet",
+        "precio": 16500,
+        "stock":10,
+        "descripcion": "Musculosa Jordan 23"
+    },
+    {
+        "id": "12",
+        "titulo": "Basquet Musculosa Lakers",
+        "imagen": "/img/b3.jpg",
+        "categoria": "basquet",
+        "precio": 22000,
+        "stock":10,
+        "descripcion": "Musculosa Lakers numero 6"
+    },
+    {
+        "id": "13",
+        "titulo": "Musculosa ARG",
+        "imagen": "/img/b4.jpg",
+        "categoria": "basquet",
+        "precio": 27500,
+        "stock":10,
+        "descripcion": "Musculosa Argentina 10"
+    },
+    {
+        "id": "14",
+        "titulo": "Pantalon largo ",
+        "imagen": "/img/b5.jpg",
+        "categoria": "basquet",
+        "precio": 6000,
+        "stock":10,
+        "descripcion": "Pantalon Largo basquet Jordan"
+    },
+    {
+        "id": "15",
+        "titulo": "Remera",
+        "imagen": "/img/b6.jpg",
+        "categoria": "basquet",
+        "precio": 14500,
+        "stock":10,
+        "descripcion": "Remera blanca Jordan"
+    },
+    {
+        "id": "16",
+        "titulo": "Guantes",
+        "imagen": "/img/f1.jpg",
+        "categoria": "futbol",
+        "precio": 20000,
+        "stock":10,
+        "descripcion": "Guantes Nike blanco y negro"
+    },
+    {
+        "id": "17",
+        "titulo": "Medias adidas",
+        "imagen": "/img/f2.jpg",
+        "categoria": "futbol",
+        "precio": 25500,
+        "stock":10,
+        "descripcion": "Medias azules adidas"
+    },
+    {
+        "id": "18",
+        "titulo": "Medias Afa",
+        "imagen": "/img/f3.jpg",
+        "categoria": "futbol",
+        "precio": 31000,
+        "stock":10,
+        "descripcion": "Medias AFA negras con rojo "
+    },
+    {
+        "id": "19",
+        "titulo": "Medidas Adidas",
+        "imagen": "/img/f4.jpg",
+        "categoria": "futbol",
+        "precio": 8500,
+        "stock":10,
+        "descripcion": "Medias blancas adidas con rojo "
+    },
+    {
+        "id": "20",
+        "titulo": "Pelota",
+        "imagen": "/img/f5.jpg",
+        "categoria": "futbol",
+        "precio": 14000,
+        "stock":10,
+        "descripcion": "Pelota futbol 11 adidas "
+    },
+    {
+        "id": "21",
+        "titulo": "Camiseta",
+        "imagen": "/img/f6.jpg",
+        "categoria": "futbol",
+        "precio": 19500,
+        "stock":10,
+        "descripcion": "Camiseta boca titular"
+    },
+    {
+        "id": "22",
+        "titulo": "Camiseta",
+        "imagen": "/img/f7.jpg",
+        "categoria": "futbol",
+        "precio": 25000,
+        "stock":10,
+        "descripcion": "Camiseta negra Paris"
+    }
+]

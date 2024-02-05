@@ -1,37 +1,33 @@
-import CartWidget from "../CartWidget/CartWidget";
-import carrito from "/carrito.png";
-import carrito_2 from "/carrito_2.png";
-import logo from "/SM_logo.png"; //"../../../public/SM_logo.png"
-import logo2 from "/SM_logo_2.png";
-
-import NavLink from "./NavLink";
-
-import { Link } from "react-router-dom";
-
-const Navbar = () => {
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import CartWidget from '../CartWidget/CartWidget'
+import Logo from '../Logo/Logo';
+import { Link } from 'react-router-dom';
+import './NavBar.css'
+function NavBar() {
   return (
-    <header className="bg-red-900">
-      <div className="container m-auto py-6 flex justify-between items-center">
-        <Link to={"/"}><img className="w-20 h-20" src={logo} alt="logo" /></Link>
-        <div className="text-white text-lg font-semibold">
-          <nav className="flex gap-4 ">
-            <Link className="hover:text-red-200" to={"/"}>Inicio</Link>
-            <Link className="hover:text-red-200" to={"/Productos"}>Productos</Link>
-            <Link className="hover:text-red-200" to={"/Productos/electronica"}>Electonica</Link>
-            <Link className="hover:text-red-200" to={"/Productos/deportes"}>Deportes</Link>
-            <Link className="hover:text-red-200" to={"/Productos/muebles"}>Muebles</Link>
-            <ul>
-              <li className="nav__list">
-                <a href="carrito">
-                  <CartWidget imagen={carrito_2} alt="carrito" />
-                </a>
-              </li>
-            </ul>
-          </nav>{" "}
-        </div>
-      </div>
-    </header>
-  );
-};
+    <div>
 
-export default Navbar;
+  
+    {/* <Navbar bg="dark" data-bs-theme="dark"> */}
+    <Navbar className="NavBar_container">
+    <Container fluid className='navbar' >
+      <Navbar.Brand>
+        <Nav.Link as={Link} to='/'> <Logo/> </Nav.Link>
+      </Navbar.Brand>
+      <Nav className="me-auto espacio-navbar">
+        <Nav.Link as={Link} to="/">HOME</Nav.Link>
+        <Nav.Link as={Link} to="/categoria/accesorios" >ACCESORIOS</Nav.Link>
+        <Nav.Link as={Link} to="/categoria/futbol" >FUTBOL</Nav.Link>
+        <Nav.Link as={Link} to="/categoria/basquet" >BASQUET</Nav.Link>
+        <Nav.Link as={Link} to="/cart" > <CartWidget/> </Nav.Link>
+      </Nav>
+    </Container>
+  </Navbar>
+  </div>
+  )
+ 
+}
+
+export default NavBar;

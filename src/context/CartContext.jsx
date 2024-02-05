@@ -1,88 +1,86 @@
-import { createContext, useState } from "react";
+import { createContext, useState } from "react"
 
-export const CartContext = createContext();
 
-export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
+export const CartContext = createContext()
 
-  //Agrega al carrito. Con ...cart, item le estoy dando al arra cart el valor de item tambien
-  const addToCart = (producto) => {
-    //console.log(producto)
-    if (isInCart(producto.id)){
-      console.log("entro porque encontro el producto")
-      let newProducts = cart.map((item) => {
-        if (item.id === producto.id) {
-          return{
-            ...item,
-            cantidad: item.cantidad + producto.cantidad,};
-          }else
-          {
-            return item
-          }
-        })
-     setCart(newProducts)
-     console.log("Puso el cantidad de producto")
-    } else {
-      setCart([...cart,producto])
-      console.log("producto despues de insertarlo")
-    }
-    ver()
-    
-   //console.log(quantityByItem(producto.id))
+const CartContextComponent = ({ children }) => {
+    const [cart, setCart] = useState(JSON.parse(localStorage.getItem("cart")) || []);
+
+  const addToCart = (product)=>{
+   let exist= isInCart(product.id)
+   if(exist){
+     let newArr = cart.map( (elemento)=>{
+      if(elemento.id === product.id){
+        return {...elemento, quantity:product.quantity}
+      }else {
+        return elemento
+      }
+     })
+     setCart (newArr)
+     localStorage.setItem("cart", JSON.stringify(newArr))
+   } else{
+    setCart( [ ...cart, product ] )
+    localStorage.setItem("cart", JSON.stringify([...cart, product]))
+   }
+   
   }
 
-  const isInCart = (id) => {
-    return cart.some((item) => item.id === id);
-  };
+  const isInCart = (id)=>{
+    let exist =cart.some(elemento=> elemento.id=== id)
+    return exist
+  }
+
+  const getQuantityById = (id) =>{
+    let product = cart.find((elemento)=>elemento.id===id)
+    return product?.quantity;
+  }
+
+  //Limpiar el carrito
 
   const clearCart = () => {
-    setCart([]);
-  };
-
-  const itemsInCart = () => {
-    return cart.reduce((acc, item) => acc + item.cantidad, 0);
-  };
-
-  const totalCart = () => {
-    return cart.reduce((acc, item) => acc + item.cantidad * item.price, 0);
-  };
-
-  const removeItem = (id) => {
-    console.log("saco id " , id)
-    setCart(cart.filter((item) => item.id !== id));
-    console.log("remove", cart)
-  };
-
-  const quantityByItem = (id) => {
-    //Acá hace la cantidad de productos por ID
-    console.log("quantityDeProductos")
-    const productos = cart.find((item) => item.id === id)
-    console.log("Cantidad de productos" , productos.cantidad)
-    return productos.cantidad
+    setCart ([])
+    localStorage.removeItem("cart")
+  }
+  //Obtener el total del carrito
+  const getTotalPrice = () =>{
+    let total = cart.reduce((acc, elemento)=> {
+      return acc + (elemento.precio * elemento.quantity)
+    }, 0)
+    return total
   }
 
- const ver = () => {
-  console.log("veo el cart", cart)
- }
 
+  //Borrar un elemento particular del carrito
+  const deleteProductoById = (id) =>{
+    let newArr = cart.filter((producto)=> producto.id !== id)//
+    setCart(newArr)
+    localStorage.setItem("cart", JSON.stringify( newArr ))
+  }
 
+  //Obtener la cantidad de elementos
 
- 
-  return (
-    <CartContext.Provider
-      value={{
-        cart,
-        isInCart,
-        addToCart,
-        clearCart,
-        itemsInCart,
-        totalCart,
-        removeItem,
-        // acavanlosnombresdelasfunciones,
-        // ovaloresdevariablesdelcontexto
-      }}
-    >
-      {children}
-    </CartContext.Provider>
-  );
-};
+  const getTotalQuantity = () => {
+    let total = cart.reduce ((acc, elemento) => {
+      return acc + elemento.quantity
+    }, 0)
+    return total;
+  }
+
+    const data = {
+        cart: cart,
+        addToCart: addToCart,
+        getQuantityById: getQuantityById,
+        clearCart: clearCart,
+        deleteProductoById: deleteProductoById,
+        getTotalPrice: getTotalPrice,
+        getTotalQuantity: getTotalQuantity
+
+    }
+    return (
+        <CartContext.Provider value={data}>
+            {children}
+        </CartContext.Provider>
+    )
+}
+
+export default CartContextComponent

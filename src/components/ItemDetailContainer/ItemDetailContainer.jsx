@@ -1,51 +1,53 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-// import pedirDatos from "../../utils/utils";
-//import ItemCard from "../ItemCard/ItemCard";
-import ItemDetail from "../ItemDetail/ItemDetail";
-import { db } from "../../firebase/config";
-import { doc, getDoc } from "firebase/firestore";
+import { useState, useEffect, useContext } from 'react'
+import { useParams } from 'react-router-dom'
+import ItemDetail from '../ItemDetail/ItemDetail';
+import { CartContext } from '../../context/CartContext';
+import Swal from 'sweetalert2';
+import { db } from '../../firebaseConfig';
+import { getDoc, collection, doc } from "firebase/firestore"
 
 
 const ItemDetailContainer = () => {
-  const [item, setItem] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const { itemId } = useParams();
+  const [producto, setProducto] = useState({});
+  const { id } = useParams();
+
+  const {addToCart, getQuantityById} = useContext(CartContext)
+
+  let totalQuantity = getQuantityById(id)
+  
 
   useEffect(() => {
-    setLoading(true);
+   let itemCollection = collection(db, "productos");
+   let redDoc = doc(itemCollection, id)
+   getDoc(redDoc).then((res)=>{setProducto({id: res.id, ...res.data()})
+  })
+  }, [id])
 
-    const docRef = doc(db,'productos',itemId)
-    getDoc(docRef)
-      .then((docItem) => {
-        const doc = {
-          ...docItem.data(),
-          id: docItem.id          
-        }
-        setItem(doc)
-        // console.log(doc)
-      })
-      .finally(() => setLoading(false))
-    // pedirDatos() // <= Promise
-    //   .then((data) => {
-    //     const itemData = data.find((prop) => prop.id === Number(itemId));
-    //     console.log("este es el ´roducto", itemData);
-    //     setItem(itemData);
-    //     setLoading(false);
-    //   });
-  }, []);
+  const onAdd = ( cantidad ) =>{
 
+    let item = {
+      ...producto,
+      quantity: cantidad,
+    };
+    addToCart (item)
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Producto agregado al carrito",
+      showConfirmButton: false,
+      timer: 1500
+    });
+   
+  }
   return (
-    <div className="flex  m-auto items-center justify-center flex-row">
-      {loading ? (
-        <h2>Cargando </h2>
-      ) : (
-        <div>
-          <ItemDetail item={item} />
-        </div>
-      )}
-    </div>
-  ); //<ItemDetail item={item}/>
-};
+   
+      <div >
+        {producto && <ItemDetail produc={producto} onAdd= {onAdd} initial={totalQuantity}/> }
+          
+      </div>
+    
+  )
+}
 
-export default ItemDetailContainer;
+export default ItemDetailContainer
