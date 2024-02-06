@@ -1,3 +1,5 @@
 .NavBar_container{
-    background-color: white;
+    background-color: rgb(239, 130, 130);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    display: flex;
 }

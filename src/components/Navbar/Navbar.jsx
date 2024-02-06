@@ -16,7 +16,8 @@ function NavBar() {
       <Navbar.Brand>
         <Nav.Link as={Link} to='/'> <Logo/> </Nav.Link>
       </Navbar.Brand>
-      <Nav className="me-auto espacio-navbar">
+      <Nav>
+         {/* className="me-auto espacio-navbar"> */}
         <Nav.Link as={Link} to="/">HOME</Nav.Link>
         <Nav.Link as={Link} to="/categoria/accesorios" >ACCESORIOS</Nav.Link>
         <Nav.Link as={Link} to="/categoria/futbol" >FUTBOL</Nav.Link>
